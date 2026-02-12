@@ -16,6 +16,7 @@ excel.init_excel(app)
 #database connection
 mydb=mysql.connector.connect(user='root',host='localhost',password='admin',db='snmp')
 
+
 @app.route("/")
 def home():
     return render_template("welcome.html")
@@ -77,14 +78,26 @@ def login():
             if stored_password[0]==userpassword:
                 session['user']=useremail
                 print(session)
+                logging.info(f"User {useremail} logged in successfully")
                 return redirect(url_for('dashboard'))
             else:
                 flash('password wrong')
+                logging.warning(f"Failed login attempt for {useremail}")
                 return redirect(url_for('login'))
         elif count_email[0]==0:
             flash('Email not found')
+            logging.warning(f"Failed login attempt for {useremail}")
             return redirect(url_for('login'))
     return render_template('login.html')
+
+import logging
+
+logging.basicConfig(
+    filename='app.log',
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+
 
 @app.route('/dashboard')
 def dashboard():
@@ -100,6 +113,7 @@ def addnotes():
         mydb.commit()
         cursor.close()
         flash(f'notes {title} added successfully')
+        logging.info(f"Note '{title}' added by {session.get('user')}")
         return redirect(url_for('viewallnotes'))
     return render_template('addnotes.html')
 
@@ -131,6 +145,7 @@ def updatenotes(nid):
         cursor=mydb.cursor(buffered=True)
         cursor.execute('update notes set title=%s,description=%s where nid=%s and added_by=%s',[u_title,u_description,nid,session.get('user')])
         mydb.commit()
+        logging.info(f"Note '{u_title}' updated successfully by {session.get('user')}")
         flash(f'notes{u_title} updated successfully')
         return redirect(url_for('viewnotes',nid=nid))
     return render_template('updatenotes.html',notesdata=notesdata)
@@ -141,6 +156,7 @@ def deletenotes(nid):
         cursor.execute('delete from notes where nid=%s',[nid])
         #notesdata=cursor.fetchone()
         mydb.commit()
+        logging.info(f"Note ID {nid} deleted by {session.get('user')}")
         return redirect(url_for('viewallnotes'))
 
 @app.route('/uploadfiles',methods=['GET','POST'])
@@ -152,6 +168,7 @@ def uploadfiles():
         cursor=mydb.cursor(buffered=True)
         cursor.execute('insert into filedata(filename,fdata,added_by) values(%s,%s,%s)',[f_name,fdata,session.get('user')])
         mydb.commit()
+        logging.info(f"Note '{f_name}' added by {session.get('user')}")
         flash(f'{f_name} added successfully')
 
     return render_template('uploadfiles.html')
@@ -187,6 +204,7 @@ def deletefile(fid):
         cursor=mydb.cursor(buffered=True)
         cursor.execute('delete from filedata where fid=%s',[fid])
         mydb.commit()
+        logging.info(f"file added successfully by {session.get('user')}")
         flash(f'File deleted successfully')
         return redirect(url_for('viewallfiles')) 
 
@@ -277,6 +295,7 @@ def adminlogin():
         if admin_data:
             if admin_data[0] == password:
                 session['admin'] = email
+                logging.info(f"Admin {email} logged in")
                 return redirect(url_for('adminhome'))
             else:
                 flash("Wrong password")

@@ -1,0 +1,49 @@
+2026-02-12 23:50:24,017 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-02-12 23:50:24,017 - INFO - [33mPress CTRL+C to quit[0m
+2026-02-12 23:50:24,018 - INFO -  * Restarting with stat
+2026-02-12 23:50:24,431 - WARNING -  * Debugger is active!
+2026-02-12 23:50:24,433 - INFO -  * Debugger PIN: 987-752-587
+2026-02-12 23:50:54,787 - INFO - 127.0.0.1 - - [12/Feb/2026 23:50:54] "GET /adminhome HTTP/1.1" 200 -
+2026-02-12 23:50:56,466 - INFO - 127.0.0.1 - - [12/Feb/2026 23:50:56] "GET /adminhome HTTP/1.1" 200 -
+2026-02-12 23:50:58,235 - INFO - 127.0.0.1 - - [12/Feb/2026 23:50:58] "GET /adminlogin HTTP/1.1" 200 -
+2026-02-12 23:51:04,542 - INFO - 127.0.0.1 - - [12/Feb/2026 23:51:04] "GET / HTTP/1.1" 200 -
+2026-02-12 23:51:07,590 - INFO - 127.0.0.1 - - [12/Feb/2026 23:51:07] "GET /login HTTP/1.1" 200 -
+2026-02-12 23:51:14,409 - INFO - User kishoreilla07@gmail.com logged in successfully
+2026-02-12 23:51:14,414 - INFO - 127.0.0.1 - - [12/Feb/2026 23:51:14] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-02-12 23:51:14,439 - INFO - 127.0.0.1 - - [12/Feb/2026 23:51:14] "GET /dashboard HTTP/1.1" 200 -
+2026-02-12 23:51:14,597 - INFO - 127.0.0.1 - - [12/Feb/2026 23:51:14] "GET /static/dashboard.css HTTP/1.1" 200 -
+2026-02-12 23:51:35,016 - INFO - 127.0.0.1 - - [12/Feb/2026 23:51:35] "GET /addnotes HTTP/1.1" 200 -
+2026-02-12 23:51:35,058 - INFO - 127.0.0.1 - - [12/Feb/2026 23:51:35] "[36mGET /static/dashboard.css HTTP/1.1[0m" 304 -
+2026-02-12 23:51:35,058 - INFO - 127.0.0.1 - - [12/Feb/2026 23:51:35] "GET /static/addnotes.css HTTP/1.1" 200 -
+2026-02-12 23:51:51,100 - INFO - Note 'delhi files' added by kishoreilla07@gmail.com
+2026-02-12 23:51:51,105 - INFO - 127.0.0.1 - - [12/Feb/2026 23:51:51] "[32mPOST /addnotes HTTP/1.1[0m" 302 -
+2026-02-12 23:51:51,142 - INFO - 127.0.0.1 - - [12/Feb/2026 23:51:51] "GET /viewallnotes HTTP/1.1" 200 -
+2026-02-12 23:51:51,227 - INFO - 127.0.0.1 - - [12/Feb/2026 23:51:51] "[36mGET /static/dashboard.css HTTP/1.1[0m" 304 -
+2026-02-12 23:51:51,230 - INFO - 127.0.0.1 - - [12/Feb/2026 23:51:51] "GET /static/viewallnotes.css HTTP/1.1" 200 -
+2026-02-12 23:51:55,806 - INFO - Note ID 8 deleted by kishoreilla07@gmail.com
+2026-02-12 23:51:55,808 - INFO - 127.0.0.1 - - [12/Feb/2026 23:51:55] "[32mGET /deletenotes/8 HTTP/1.1[0m" 302 -
+2026-02-12 23:51:55,829 - INFO - 127.0.0.1 - - [12/Feb/2026 23:51:55] "GET /viewallnotes HTTP/1.1" 200 -
+2026-02-12 23:51:55,853 - INFO - 127.0.0.1 - - [12/Feb/2026 23:51:55] "[36mGET /static/dashboard.css HTTP/1.1[0m" 304 -
+2026-02-12 23:51:55,855 - INFO - 127.0.0.1 - - [12/Feb/2026 23:51:55] "[36mGET /static/viewallnotes.css HTTP/1.1[0m" 304 -
+2026-02-12 23:51:59,500 - INFO - 127.0.0.1 - - [12/Feb/2026 23:51:59] "GET /updatenotes/12 HTTP/1.1" 200 -
+2026-02-12 23:51:59,539 - INFO - 127.0.0.1 - - [12/Feb/2026 23:51:59] "[36mGET /static/dashboard.css HTTP/1.1[0m" 304 -
+2026-02-12 23:51:59,540 - INFO - 127.0.0.1 - - [12/Feb/2026 23:51:59] "[36mGET /static/addnotes.css HTTP/1.1[0m" 304 -
+2026-02-12 23:52:03,338 - INFO - Note 'delhi files' updated successfully by kishoreilla07@gmail.com
+2026-02-12 23:52:03,346 - INFO - 127.0.0.1 - - [12/Feb/2026 23:52:03] "[32mPOST /updatenotes/12 HTTP/1.1[0m" 302 -
+2026-02-12 23:52:03,402 - INFO - 127.0.0.1 - - [12/Feb/2026 23:52:03] "GET /viewnotes12 HTTP/1.1" 200 -
+2026-02-12 23:52:03,520 - INFO - 127.0.0.1 - - [12/Feb/2026 23:52:03] "[36mGET /static/dashboard.css HTTP/1.1[0m" 304 -
+2026-02-12 23:52:03,522 - INFO - 127.0.0.1 - - [12/Feb/2026 23:52:03] "[36mGET /static/addnotes.css HTTP/1.1[0m" 304 -
+2026-02-12 23:52:36,249 - INFO - 127.0.0.1 - - [12/Feb/2026 23:52:36] "GET /uploadfiles HTTP/1.1" 200 -
+2026-02-12 23:52:36,290 - INFO - 127.0.0.1 - - [12/Feb/2026 23:52:36] "GET /static/uploadfiles.css HTTP/1.1" 200 -
+2026-02-12 23:52:36,290 - INFO - 127.0.0.1 - - [12/Feb/2026 23:52:36] "[36mGET /static/dashboard.css HTTP/1.1[0m" 304 -
+2026-02-12 23:52:42,077 - INFO - Note 'Profile (1).pdf' added by kishoreilla07@gmail.com
+2026-02-12 23:52:42,082 - INFO - 127.0.0.1 - - [12/Feb/2026 23:52:42] "POST /uploadfiles HTTP/1.1" 200 -
+2026-02-12 23:52:42,128 - INFO - 127.0.0.1 - - [12/Feb/2026 23:52:42] "[36mGET /static/dashboard.css HTTP/1.1[0m" 304 -
+2026-02-12 23:52:42,128 - INFO - 127.0.0.1 - - [12/Feb/2026 23:52:42] "[36mGET /static/uploadfiles.css HTTP/1.1[0m" 304 -
+2026-02-12 23:52:54,447 - INFO - 127.0.0.1 - - [12/Feb/2026 23:52:54] "GET /login HTTP/1.1" 200 -
+2026-02-12 23:52:59,102 - INFO - 127.0.0.1 - - [12/Feb/2026 23:52:59] "GET / HTTP/1.1" 200 -
+2026-02-12 23:53:00,624 - INFO - 127.0.0.1 - - [12/Feb/2026 23:53:00] "GET /adminlogin HTTP/1.1" 200 -
+2026-02-12 23:53:07,790 - INFO - Admin admin@gmail.com logged in
+2026-02-12 23:53:07,794 - INFO - 127.0.0.1 - - [12/Feb/2026 23:53:07] "[32mPOST /adminlogin HTTP/1.1[0m" 302 -
+2026-02-12 23:53:07,816 - INFO - 127.0.0.1 - - [12/Feb/2026 23:53:07] "GET /adminhome HTTP/1.1" 200 -
