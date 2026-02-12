@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Login</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #1e1e2f, #2c2c54);
+            color: white;
+        }
+
+        .login-card {
+            width: 350px;
+            padding: 40px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .login-card h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        label {
+            font-size: 14px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            border: none;
+            outline: none;
+            font-size: 14px;
+        }
+
+        input:focus {
+            box-shadow: 0 0 5px #00b894;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: none;
+            background: #00b894;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #009e7f;
+        }
+
+        .flash-message {
+            margin-top: 15px;
+            padding: 8px 10px;
+            background: #ff4d4d;
+            border-radius: 6px;
+            font-size: 13px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="login-card">
+    <h2>Admin Login</h2>
+
+    <form method="post">
+        <label>Email</label>
+        <input type="email" name="email" required>
+
+        <label>Password</label>
+        <input type="password" name="password" required>
+
+        <button type="submit">Login</button>
+    </form>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for msg in messages %}
+          <div class="flash-message">{{ msg }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+</div>
+
+</body>
+</html>
